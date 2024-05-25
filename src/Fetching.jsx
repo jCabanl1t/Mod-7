@@ -8,7 +8,7 @@ function Manga({number}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://gist.githubusercontent.com/jCabanl1t/3bbf3e461e94acb4dd4c0067f0cc1f00/raw/d071f67acf71433edf6b77316d21428a6152c112/Manga.json", { mode: "cors" })
+    fetch("https://gist.githubusercontent.com/jCabanl1t/3bbf3e461e94acb4dd4c0067f0cc1f00/raw/0a5b1a91e210b9796702bff8657ef0c3fe9bf664/Manga.json", { mode: "cors" })
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("Failed to fetch image");
@@ -16,13 +16,13 @@ function Manga({number}) {
         return response.json();
       })
       .then((data) => {
-        setImageURL(data.Manga[number].image);
+        setImageURL(data.Manga[number].image);          {/*successful*/}
         setTitle(data.Manga[number].title);
         setDescription(data.Manga[number].description);
         setLoading(false);
       })
       .catch((error) => {
-        setError(error.message);
+        setError(error.message);                        {/*failed*/}
         setLoading(false);
       });
   }, [number]);
@@ -33,7 +33,7 @@ function Manga({number}) {
   return (
     <>
       <h1>{title}</h1>
-      <img src={imageURL} alt={"placeholder text"} />
+      <img src={imageURL} alt={"Manga Image here"} /> {/*handling errors*/}
       <h3>{description}</h3>
     </>
   );
