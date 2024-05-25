@@ -1,0 +1,24 @@
+/* App.css */
+
+.App {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* Align items at the top */
+}
+
+.Manga {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 30%; /* Adjust the width as needed */
+}
+
+.Manga img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Manga h1, .Manga h3 {
+  text-align: center;
+}
